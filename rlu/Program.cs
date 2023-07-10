@@ -13,6 +13,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UsePathBase("/rlu");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
