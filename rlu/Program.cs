@@ -14,6 +14,11 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UsePathBase("/rlu");
+app.Use((context, next) =>
+{
+    context.Request.PathBase = "/rlu";
+    return next();
+});
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
