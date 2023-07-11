@@ -14,7 +14,13 @@ namespace rlu.Pages
 
         public void OnGet()
         {
-
+            var coll = Request.Headers;
+            if (Request.Headers.ContainsKey("$remote_user")) 
+            {
+                var uname = Request.Headers["$remote_user"];
+                ViewData.Add("uname", uname);
+                
+            }
         }
     }
 }
